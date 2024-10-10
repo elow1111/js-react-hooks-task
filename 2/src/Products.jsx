@@ -28,7 +28,13 @@ const Products = () => {
   };
 
   // BEGIN (write your solution here)
-
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const fetchedProducts = await getProducts();
+      setProducts(fetchedProducts);
+    };
+    fetchProducts();
+  }, []);
   // END
 
   return (
